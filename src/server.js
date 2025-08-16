@@ -27,8 +27,16 @@ const start = async () => {
 
     // Register plugins
     await fastify.register(cors, {
-      origin: process.env.CORS_ORIGIN || 'https://ss-dash-fe.vercel.app',
-      credentials: true
+    origin: (origin, cb) => {
+    const allowedOrigins = process.env.CORS_ORIGIN.split(',')
+
+    if (!origin || allowedOrigins.includes(origin)) {
+      cb(null, true)
+    } else {
+      cb(new Error("Not allowed by CORS"), false)
+    }
+  },
+  credentials: true
     })
 
     await fastify.register(jwt, {
