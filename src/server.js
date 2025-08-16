@@ -27,7 +27,7 @@ const start = async () => {
 
     // Register plugins
     await fastify.register(cors, {
-      origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
+      origin: process.env.CORS_ORIGIN || 'https://ss-dash-fe.vercel.app',
       credentials: true
     })
 

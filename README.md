@@ -274,7 +274,7 @@ NODE_ENV=production
 PORT=4000
 MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/d-dash
 JWT_SECRET=your-production-secret-key
-CORS_ORIGIN=https://your-frontend-domain.com
+CORS_ORIGIN=https://ss-dash-fe.vercel.app
 ```
 
 ### Docker (Optional)
